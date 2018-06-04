@@ -20,11 +20,19 @@ app.use(express.static('public'));
 //Routes
 app.get('/', (req, res) => {
     return res.render('home/index', {
-    	title: 'Test Html Page'
-	});
+        title: 'Test Html Page'
+    });
 });
 
+app.get('/about', (req, res) => {
+    res.render('about/about')
+});
 
+app.get('/login', (req, res) =>{
+    res.send('Login Page');
+});
+
+// Server start
 app.listen(port, (err) => {
     if(err) {
         return console.log('Something happened', err);
